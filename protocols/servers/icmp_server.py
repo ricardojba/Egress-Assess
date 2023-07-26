@@ -23,8 +23,8 @@ class Server:
                         pass
                     else:
                         if b".:::-989-:::." in incoming_data:
-                            file_name = incoming_data.split(b".:::-989-:::.")[0].decode('utf-8')
-                            file_data = incoming_data.split(b".:::-989-:::.")[1].decode('utf-8')
+                            file_name = incoming_data.split(b".:::-989-:::.")[0].decode('utf-8','ignore')
+                            file_data = incoming_data.split(b".:::-989-:::.")[1].decode('utf-8','ignore')
                             helpers.received_file(file_name)
                             with open(self.loot_path + file_name, 'a') as icmp_out:
                                 icmp_out.write(file_data)
